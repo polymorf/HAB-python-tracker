@@ -11,7 +11,7 @@ bits = 7
 stopbits = 2
 baud = 50
 baud_delay=(1000000/baud)
-data_pin=18
+data_pin=12
 
 
 
