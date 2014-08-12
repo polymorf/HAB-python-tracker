@@ -67,9 +67,10 @@ if __name__ == '__main__':
 	GPS = serial.Serial('/dev/ttyAMA0',9600, timeout=2, rtscts=1)
 	try:
 		while True:
-			recvGPS(GPS,redis)
-	except:
-		print "Unexpected error:", sys.exc_info()
+			try:
+				recvGPS(GPS,redis)
+			except:
+				print "Unexpected error:", sys.exc_info()
 	finally:
 		GPS.close()
 
