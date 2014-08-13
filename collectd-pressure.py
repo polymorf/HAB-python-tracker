@@ -47,7 +47,8 @@ sensor = BMP085.BMP085()
 #sensor = BMP085.BMP085(mode=BMP085.BMP085_ULTRAHIGHRES)
 
 print 'PUTVAL "Raspi/exec-pressure/temperature" interval=10.000 N:{0:0.2f}'.format(sensor.read_temperature())
-print 'PUTVAL "Raspi/exec-pressure/gauge-pressure" interval=10.000 N:{0:0.2f}'.format(sensor.read_pressure())
 print 'PUTVAL "Raspi/exec-pressure/gauge-altitude" interval=10.000 N:{0:0.2f}'.format(sensor.read_altitude())
-print 'PUTVAL "Raspi/exec-pressure/gauge-sealevel_pressure" interval=10.000 N:{0:0.2f}'.format(sensor.read_sealevel_pressure())
+print 'PUTVAL "Raspi/exec-pressure/gauge-pressure" interval=10.000 N:{0:0.2f}'.format(sensor.read_pressure()/100)
+print 'PUTVAL "Raspi/exec-pressure/gauge-sealevel_pressure" interval=10.000 N:{0:0.2f}'.format(sensor.read_sealevel_pressure()/100)
+print 'PUTVAL "Raspi/exec-pressure/gauge-atm" interval=10.000 N:1013.25'
 
